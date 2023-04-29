@@ -88,6 +88,31 @@ function showCocktailDetails(cocktailId) {
                         .catch(error => console.error(error));
                         }
 
+                        
+
+const ingredientModal = document.getElementById('ingredientModal');
 
 
+document.querySelector('#ingredientList').addEventListener('click', (e) => {
+  if (e.target.tagName === 'IMG') {
+    const ingredientName = e.target.alt;
+    showIngredientDetails(ingredientName);
+  }
+});
 
+function showIngredientDetails(ingredientName) {
+  fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?i=${ingredientName}`)
+    .then(response => response.json())
+    .then(data => {
+      const ingredient = data.ingredients[0];
+      const ingredientDesc = ingredient.strDescription;
+
+    
+      ingredientModal.querySelector('.ingredient-name').innerText = ingredientName;
+      ingredientModal.querySelector('.ingredient-description').innerText = ingredientDesc;
+
+     
+      $('#ingredientModal').modal('show');
+    })
+    .catch(error => console.error(error));
+}
