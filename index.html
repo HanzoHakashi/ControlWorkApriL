@@ -13,16 +13,27 @@
     <title>ControlWork</title>
 </head>
 <body>
-    <h1>Cocktail Search</h1>
-    <form>
-        <label for="cocktailName">Write name of cocktail</label>
-        <input type="text" id="cocktailName" name="cocktailName">
-        <label for="ingredientName">Write name of ingredient</label>
-        <input type="text" id="ingredientName" name="ingredientName">
-        <button type="submit">Search</button>
-    </form>
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Cocktail Search</a>
+                <form class="d-flex">
+                        <label for="cocktailName">Write name of cocktail</label>
+                        <input type="text" id="cocktailName" name="cocktailName">
+                        <button type="submit">Search</button>
+                        <label for="ingredientName">Write name of ingridient</label>
+                        <input type="text" id="ingredientName" name="ingredientName">
+                        <button type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+   
+
     
-        <div id="cocktailList" class="row d-flex justify-content-center"></div>
+    
+        <div id="cocktailList" class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3 justify-content-center"></div>
   
     
     <div class="modal fade" id="cocktailModal" tabindex="-1" aria-labelledby="cocktailModalLabel" aria-hidden="true">
@@ -35,7 +46,7 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-4">
-                            <img class="img-fluid rounded" id="cocktailImg" alt="">
+                            <ul id="ingredientList"></ul>
                         </div>
                         <div class="col-md-8">
                             <h2 id="cocktailName"></h2>
@@ -60,5 +71,6 @@
     </div>
     
 </body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="script.js"></script>
 </html>
